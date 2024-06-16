@@ -6,6 +6,7 @@ import { getContacts } from "../../redux/selectors";
 const ContactList = () => {
   const contacts = useSelector(getContacts);
   
+  
   return (
       <ul className={css.container}>
           {contacts.map(({ id, name, number }) => (

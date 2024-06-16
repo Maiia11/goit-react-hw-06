@@ -6,9 +6,13 @@ const filtersSlice = createSlice({
         name: ""
     },
     reducers: {
+        searchContact(state, action) {
+            return action.payload;
+            
+        }
         
     }
 })
 
-
- export const filtersReducer = filtersSlice.reducer
+export const { searchContact } = filtersSlice.actions;
+export const filtersReducer = filtersSlice.reducer;

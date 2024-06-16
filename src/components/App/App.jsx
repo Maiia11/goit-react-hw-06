@@ -6,7 +6,7 @@ import ContactForm from '../ContactForm/ContactForm'
 import SearchBox from '../SearchBox/SearchBox'
 import initialContacts from '../contacts.json'
 import { useSelector } from 'react-redux'
-import { getFilters } from '../../redux/selectors'
+
 
 
 const createInitialContacts = () => {
@@ -22,11 +22,11 @@ function App() {
   
   
 
-  const filters = useSelector(getFilters);
-  console.log(filters);
+  
+  
 
   // const [contact, setContact] = useState(createInitialContacts);
-  const [filter, setFilter] = useState('');
+  // const [filter, setFilter] = useState('');
 
   // const addContact = (newContact) => {
   //   setContact((prevContacts) => {
@@ -54,11 +54,8 @@ function App() {
     <div>
       <h1>Phonebook</h1>
       <ContactForm  />
-      <SearchBox value={filter} onFilter={setFilter} />
+      <SearchBox />
       <ContactList />
-      {/* <ContactList contact={filterContacts} onDelete={deleteContact} /> */}
-      
-      
 </div>
   )
 }
