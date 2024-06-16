@@ -54,7 +54,6 @@ function App() {
     <div>
       <h1>Phonebook</h1>
       <ContactForm  />
-      {/* <ContactForm onAdd={addContact } /> */}
       <SearchBox value={filter} onFilter={setFilter} />
       <ContactList />
       {/* <ContactList contact={filterContacts} onDelete={deleteContact} /> */}
