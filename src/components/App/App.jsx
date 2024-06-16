@@ -5,6 +5,8 @@ import './App.css'
 import ContactForm from '../ContactForm/ContactForm'
 import SearchBox from '../SearchBox/SearchBox'
 import initialContacts from '../contacts.json'
+import { useSelector } from 'react-redux'
+import { getContacts, getFilters } from '../../redux/selectors'
 
 
 const createInitialContacts = () => {
@@ -16,6 +18,13 @@ const createInitialContacts = () => {
 }
 
 function App() {
+
+  const contacts = useSelector(getContacts);
+  console.log(contacts);
+
+  const filters = useSelector(getFilters);
+  console.log(filters);
+
   const [contact, setContact] = useState(createInitialContacts);
   const [filter, setFilter] = useState('');
 
@@ -39,7 +48,7 @@ function App() {
     localStorage.setItem("contacts", JSON.stringify(contact))
    }, [contact])
   
-  console.log(localStorage.getItem('contacts'));
+  
 
   return (
     <div>
