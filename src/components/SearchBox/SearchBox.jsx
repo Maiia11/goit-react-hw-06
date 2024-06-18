@@ -6,10 +6,10 @@ import { searchContact } from '../../redux/filtersSlice';
 function SearchBox() {
   const filter = useSelector(getFilters);
   const dispatch = useDispatch();
-  const onFilter=(filters) => dispatch(searchContact(filters))
+  const onFilter=(filter) => dispatch(searchContact(filter))
   return (
     <div className={css.container}>
-      <label htmlFor={filter}>Find contacts by name</label>
+      <label htmlFor="filter">Find contacts by name</label>
       <input type="text" value={filter} id='filter' onChange={(e)=>onFilter(e.target.value)}/>
     </div>
   )
